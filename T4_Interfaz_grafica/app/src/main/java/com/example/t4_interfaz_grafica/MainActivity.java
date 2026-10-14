@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button boton2 = findViewById(R.id.button2);
         Button boton3 = findViewById(R.id.button3);
 
-        // Diapositiva 8: clase anónima (botón 1 -> rotar)
+
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        // Diapositiva 9: la propia Activity es el listener (botón 2 -> desplazar)
+
         boton2.setOnClickListener(this);
 
-        // Diapositiva 10: lambda (botón 3 -> detener)
+
         boton3.setOnClickListener(v -> {
             texto.setText("Has pulsado el botón 3");
             texto.clearAnimation();
@@ -52,14 +52,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onStart() {
         super.onStart();
-        // Diapositiva 3: propiedades del TextView desde Java
         texto.setText("Nuevo texto a mostrar");
         texto.setTextColor(Color.RED);
         texto.setTypeface(null, Typeface.ITALIC);
         texto.setTextSize(24);
     }
 
-    // Lo usa el botón 2 (interfaz implementada)
+
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.button2) {
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    // Diapositivas 5-7: cargar y aplicar la animación
+
     private void lanzarAnimacion(int recurso) {
         texto.clearAnimation();
         Animation miAnimacion = AnimationUtils.loadAnimation(this, recurso);
