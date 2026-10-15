@@ -4,17 +4,18 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-// Diapositiva 9: implementamos la interfaz OnClickListener
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView texto;
@@ -25,11 +26,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        String[] opciones = {"Opcion1", "Opcion2", "Opcion3", "Opcion4", "Opcion5"};
+        AutoCompleteTextView textoLeido = findViewById(R.id.miTexto);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, opciones);
+        textoLeido.setAdapter(adaptador);
+
+        Spinner miSpinner = (Spinner) findViewById(R.id.miSpinner);
+        String[] valores = {"Star Wars", "Reservoir dogs", "El Club de la lucha", "Snatch: Cerdos y Diamantes"};
+        miSpinner.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, valores));
+
+        miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                System.out.println("Has seleccionado el valor:" + adapterView.getItemAtPosition(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                System.out.println("No has seleccionado nada");
+            }
+        });
+
         texto = findViewById(R.id.texto);
         Button boton1 = findViewById(R.id.button1);
         Button boton2 = findViewById(R.id.button2);
         Button boton3 = findViewById(R.id.button3);
-
 
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,9 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
         boton2.setOnClickListener(this);
-
 
         boton3.setOnClickListener(v -> {
             texto.setText("Has pulsado el botón 3");
@@ -58,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         texto.setTextSize(24);
     }
 
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.button2) {
@@ -67,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
     private void lanzarAnimacion(int recurso) {
         texto.clearAnimation();
         Animation miAnimacion = AnimationUtils.loadAnimation(this, recurso);
@@ -75,4 +94,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         miAnimacion.setRepeatCount(20);
         texto.startAnimation(miAnimacion);
     }
+
 }

@@ -67,4 +67,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button4" />
+
+    <AutoCompleteTextView
+        android:id="@+id/miTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="Elige una opcion"
+        android:imeOptions="actionNext"
+        tools:ignore="MissingConstraints" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/miSpinner"
+        app:layout_constraintTop_toBottomOf="@id/miTexto"
+        app:layout_constraintEnd_toEndOf="@id/button1"
+
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
