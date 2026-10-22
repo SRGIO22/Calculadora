@@ -1,5 +1,6 @@
 package com.example.t4_interfaz_grafica;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,7 +11,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,7 +27,21 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView texto;
+    private CheckBox checkbox1;
+    private RadioGroup radioGroup;
+    private Button buttonCheck;
+    private TextView textViewResult;
 
+    private Switch switch1;
+    private TextView textViewStatus;
+
+    private SeekBar seekBar;
+    private TextView textViewProgress;
+
+    private RatingBar ratingBar;
+    private TextView textViewRating;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +90,81 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             texto.setText("Has pulsado el botón 3");
             texto.clearAnimation();
         });
+
+        checkbox1 = findViewById(R.id.checkbox1);
+
+        checkbox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    texto.setText("Checkbox marcado");
+                } else {
+                    texto.setText("Checkbox desmarcado");
+                }
+            }
+        });
+
+        radioGroup = findViewById(R.id.radioGroup);
+        buttonCheck = findViewById(R.id.button_check);
+        textViewResult = findViewById(R.id.textViewResult);
+
+        buttonCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                if (selectedId != -1) {
+                    RadioButton selectedRadioButton = findViewById(selectedId);
+                    String selectedOption = selectedRadioButton.getText().toString();
+                    textViewResult.setText("Seleccionado: " + selectedOption);
+                } else {
+                    textViewResult.setText("No se ha seleccionado ninguna opción");
+                }
+            }
+        });
+        switch1 = findViewById(R.id.switch1);
+        textViewStatus = findViewById(R.id.textViewStatus);
+
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    textViewStatus.setText("Estado : Encendido");
+                } else {
+                    textViewStatus.setText("Estado : Apagado");
+                }
+            }
+        });
+
+        seekBar = findViewById(R.id.seekBar);
+        textViewProgress = findViewById(R.id.textViewProgress);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textViewProgress.setText("Valor: " + progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        ratingBar = findViewById(R.id.ratingBar);
+        textViewRating = findViewById(R.id.textViewRating);
+
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                textViewRating.setText("Calificado: " + rating);
+            }
+        });
+
     }
 
     @Override

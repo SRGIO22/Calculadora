@@ -20,5 +20,7 @@ public class MainActivity extends AppCompatActivity {
        // setContentView(R.layout.grid_layout_ejercicio);
         setContentView(R.layout.grid_layout_ejercicio);
 
+
+
     }
 }

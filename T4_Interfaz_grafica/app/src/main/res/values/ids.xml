@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="texto" type="id" />
+    <item name="textViewStatus" type="id" />
+    <item name="switch1" type="id" />
+    <item name="radio3" type="id" />
+    <item name="radio2" type="id" />
+    <item name="radio1" type="id" />
+    <item name="radioButton1" type="id" />
+    <item name="radioButton2" type="id" />
+    <item name="radioButton3" type="id" />
+    <item name="textViewProgress" type="id" />
+    <item name="seekBar" type="id" />
 </resources>
