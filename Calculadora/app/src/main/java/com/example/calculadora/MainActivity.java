@@ -11,11 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvPantalla;
+    private TextView tvPantalla; //textview
 
     private double acumulado = 0;
-    private String operador = "";
-    private boolean nuevoNumero = true;
+    private String operador = ""; //parac guardar la funcion que se va a usar
+    private boolean nuevoNumero = true; //el ver si hay un nuevo numero
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        tvPantalla = findViewById(R.id.tvPantalla);
+        tvPantalla = findViewById(R.id.tvPantalla); //textView
 
-        Button boton0 = findViewById(R.id.boton0);
+        Button boton0 = findViewById(R.id.boton0);  //Creacion de los botones
         Button boton1 = findViewById(R.id.boton1);
         Button boton2 = findViewById(R.id.boton2);
         Button boton3 = findViewById(R.id.boton3);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Button boton_borrar = findViewById(R.id.boton_borrar);
         Button botonC = findViewById(R.id.boton_c);
 
-        boton0.setOnClickListener(new View.OnClickListener() {
+        boton0.setOnClickListener(new View.OnClickListener() { //Escribir en cada boton usando con el onclick
             @Override
             public void onClick(View v) {
                 anadirDigito("0");
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void anadirDigito(String digito) {
+    private void anadirDigito(String digito) { //Poner el numero en el text view
         if (nuevoNumero || tvPantalla.getText().toString().equals("0")) {
             tvPantalla.setText(digito);
             nuevoNumero = false;
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void pulsarOperador(String nuevoOperador) {
+    private void pulsarOperador(String nuevoOperador) { //poner el calculo para que el operador coja lo escrito en el textview
         double actual = Double.parseDouble(tvPantalla.getText().toString());
 
         if (!operador.isEmpty() && !nuevoNumero) {
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         nuevoNumero = true;
     }
 
-    private void pulsarIgual() {
+    private void pulsarIgual() { //ejecutar las opreaciones
         if (operador.isEmpty()) {
             return;
         }
@@ -249,13 +249,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void reiniciar_todo() {
+    private void reiniciar_todo() { //Borrar todo el contenido
         tvPantalla.setText("0");
         acumulado = 0;
         operador = "";
         nuevoNumero = true;
     }
-    private void borrarUltimo() {
+    private void borrarUltimo() { //Borrar el anterior con el length y recortandolo
         if (nuevoNumero) {
             return;
         }
