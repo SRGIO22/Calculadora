@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Bar Bill</string>
+    <string name="titulo">Bar Bill</string>
+    <string name="hint_camarero">Waiter name</string>
+    <string name="hint_total">Bill total (€)</string>
+    <string name="incluir_propina">Include tip</string>
+    <string name="propina_porcentaje">Tip: %1$d%%</string>
+    <string name="metodo_pago">Payment method</string>
+    <string name="efectivo">Cash</string>
+    <string name="tarjeta">Card</string>
+    <string name="valoracion">Service rating</string>
+    <string name="calcular">Calculate total</string>
+    <string name="error_vacio">Please enter the bill amount.</string>
+    <string name="error_formato">The value entered is not a valid number.</string>
+    <string name="error_minimo">The bill must be greater than 0.</string>
+    <string name="camarero_resultado">Waiter: %1$s</string>
+    <string name="resultado">Bill: %1$.2f €\nTip (%2$d%%): %3$.2f €\nTOTAL: %4$.2f €\nPayment method: %5$s\nService: %6$.1f stars</string>
+</resources>

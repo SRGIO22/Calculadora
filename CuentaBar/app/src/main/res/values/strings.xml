@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Cuenta del Bar</string>
+    <string name="titulo" translatable="false">Cuenta del Bar</string>
+    <string name="hint_camarero" translatable="false">Nombre del camarero</string>
+    <string name="hint_total" translatable="false">Total de la cuenta (€)</string>
+    <string name="incluir_propina" translatable="false">Incluir propina</string>
+    <string name="propina_porcentaje" translatable="false">Propina: %1$d%%</string>
+    <string name="metodo_pago" translatable="false">Método de pago</string>
+    <string name="efectivo" translatable="false">Efectivo</string>
+    <string name="tarjeta" translatable="false">Tarjeta</string>
+    <string name="valoracion" translatable="false">Valoración del servicio</string>
+    <string name="calcular" translatable="false">Calcular total</string>
+    <string name="error_vacio" translatable="false">Falta introducir el valor de la cuenta.</string>
+    <string name="error_formato" translatable="false">El valor introducido no es un número válido.</string>
+    <string name="error_minimo" translatable="false">La cuenta debe ser mayor que 0.</string>
+    <string name="camarero_resultado" translatable="false">Camarero: %1$s</string>
+    <string name="resultado" translatable="false">Cuenta: %1$.2f €\nPropina (%2$d%%): %3$.2f €\nTOTAL: %4$.2f €\nMétodo de pago: %5$s\nServicio: %6$.1f estrellas</string>
+
+    <string-array name="camareros">
+        <item>Antonio</item>
+        <item>Antonia</item>
+        <item>Andrés</item>
+        <item>Carlos</item>
+        <item>Carmen</item>
+        <item>Marta</item>
+        <item>Martín</item>
+        <item>Lucía</item>
+        <item>Lucas</item>
+    </string-array>
+</resources>

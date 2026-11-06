@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="acCamarero" type="id" />
+    <item name="tvPorcentaje" type="id" />
+    <item name="cbPropina" type="id" />
+    <item name="sbPropina" type="id" />
+    <item name="rgPago" type="id" />
+    <item name="ratingServicio" type="id" />
+    <item name="tvResultado" type="id" />
+    <item name="rbEfectivo" type="id" />
+</resources>
