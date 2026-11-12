@@ -22,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_weight="4"
         android:columnCount="4"
-        android:rowCount="4"
+        android:rowCount="5"
         android:useDefaultMargins="true">
 
         <Button
@@ -163,7 +163,7 @@
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
             android:backgroundTint="#CDDC39"
-            android:text="." />
+            android:text="," />
 
         <Button
             android:id="@+id/boton_igual"
@@ -184,6 +184,28 @@
             android:layout_gravity="fill"
             android:backgroundTint="#CDDC39"
             android:text="+" />
+
+        <Button
+            android:id="@+id/boton_borrar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:backgroundTint="#CDDC39"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/boton_c"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:backgroundTint="#CDDC39"
+            android:text="⌫" />
 
     </GridLayout>
 
