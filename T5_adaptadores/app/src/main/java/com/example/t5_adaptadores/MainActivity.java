@@ -1,5 +1,5 @@
 
-package com.example.paiseseuropeos;
+package com.example.t5_adaptadores;
 
 import android.app.Activity;
 import android.os.Bundle;
